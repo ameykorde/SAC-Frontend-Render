@@ -13,6 +13,8 @@
     padding-right: 15px;
 }
 
+/* ----Search ------- */
+
 .nav-input {
     background: transparent;
     border: none;
@@ -33,12 +35,6 @@ textarea:focus,
     outline: none;
 }
 
-.nav-logout {
-    color: white;
-    opacity: 0.8;
-    display: none;
-}
-
 .fa-magnifying-glass {
     color: aliceblue;
     opacity: 0.8;
@@ -46,35 +42,49 @@ textarea:focus,
     font-size: larger;
 }
 
-@media screen and (max-width: 768px) {
-    .nav-logout {
-        display: block;
-    }
-}
+/* logout */
 
-
-/* toggle button styling */
-#themePicker {
+.nav-logout {
+    color: white;
+    opacity: 0.8;
     display: none;
 }
 
-.themeToggle span {
-    font-size: 0px;
-    transition: font-size 600ms ease;
-    cursor: pointer;
-    color: white;
+/* ----------theme icon -----------*/
+.theme-small-device{
+    display: none;
 }
 
 .theme{
     margin: 0.5% -2% 0 1.5%;
+    display: block;
+    opacity: 0.9;
 }
 
-#themePicker:not(:checked)+.themeToggle #darkMode {
+.theme span{
+    color: white;
     font-size: 2rem;
-    opacity: 0.8;
+    cursor: pointer;
 }
 
-#themePicker:checked+.themeToggle #lightMode {
-    font-size: 2rem;
-    opacity: 0.8;
+/* ------media queries for responsiveness----------- */
+
+@media screen and (max-width: 990px) {
+    .nav-logout {
+        display: block;
+    }
+    .theme{
+        display: none;
+    }
+    .theme-small-device{
+        display: block;
+        margin-left: 13%;
+    }
+    .theme-small-device span{
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
 }
+
+

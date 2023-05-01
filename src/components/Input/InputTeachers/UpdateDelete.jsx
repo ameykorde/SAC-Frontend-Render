@@ -126,9 +126,9 @@ function UpdateDelete() {
       // Update teachers state with remaining teachers
       setTeachers(teachers.filter((teacher) => teacher._id !== teacherId));
 
-      toast.success('Teacher deleted successfully!');
+      toast.success('Timetable deleted successfully!');
     } catch (error) {
-      toast.error('Failed to delete teacher!');
+      toast.error('Failed to delete Timetable!');
       console.error(error);
     }
   };

@@ -1,24 +1,37 @@
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import "./Nav.css";
 
 export default function Navbar({ handleSearch }) {
-    // Using useNavigate hook to handle navigation
+    // useNavigate hook to handle navigation
     const navigate = useNavigate();
     const [theme, setTheme] = useState("light-theme")
 
-    // Creating logout function to clear local storage and redirect user to login page
+    useEffect(() => {
+        // Get the theme status from local storage
+        const savedTheme = localStorage.getItem("theme");
+
+        // Apply the stored theme status to the body
+        document.body.className = savedTheme || "light-theme";
+        setTheme(savedTheme || "light-theme");
+    }, []);
+
+    // logout function to clear local storage and redirect user to login page
     const logout = () => {
         localStorage.clear();
         navigate('/login');
     }
-    
+
+    // Toggle between theme
     const toggleTheme = () => {
-        const newTheme = theme === "light-theme" ? "dark-theme" : "light-theme";
-        document.body.className = newTheme;
+        const newTheme = theme === "dark-theme" ? "light-theme" : "dark-theme";
+        document.body.className = newTheme; //set class to index.html-body
         setTheme(newTheme);
-      };
+
+        // Store the theme status in local storage
+        localStorage.setItem("theme", newTheme);
+    };
 
 
     return (
@@ -69,17 +82,30 @@ export default function Navbar({ handleSearch }) {
                     <form className="d-flex" role="search" onSubmit={(event) => event.preventDefault()}>
                         <input className="nav-input" type="text" name="input" placeholder="Search" onChange={handleSearch} />
                         <i type="submit" className="fa-solid fa-magnifying-glass"></i>
+                        {/* These will be displayed in small devices only: Theme Icon */}
+                        <div className="theme-small-device">
+                            {theme === 'light-theme' ? (
+                                <span className="material-symbols-outlined" title="Switch to Dark Mode" onClick={toggleTheme}>
+                                    dark_mode
+                                </span>
+                            ) : (
+                                <span className="material-symbols-outlined" title="Switch to Light Mode" onClick={toggleTheme}>
+                                    light_mode
+                                </span>
+                            )}
+                        </div>
                     </form>
+                    {/* These will be displayed in large devices only: Theme Icon */}
                     <div className="theme">
-                        <input type="checkbox" id="themePicker" name="themePicker" onClick={toggleTheme} />
-                        <label htmlFor="themePicker" className="themeToggle">
-                            <span id="darkMode" className="material-symbols-outlined" title="Switch to Light Mode">
-                                light_mode
-                            </span>
-                            <span id="lightMode" className="material-symbols-outlined"  title="Switch to Dark Mode">
+                        {theme === 'light-theme' ? (
+                            <span className="material-symbols-outlined" title="Switch to Dark Mode" onClick={toggleTheme}>
                                 dark_mode
                             </span>
-                        </label>
+                        ) : (
+                            <span className="material-symbols-outlined" title="Switch to Light Mode" onClick={toggleTheme}>
+                                light_mode
+                            </span>
+                        )}
                     </div>
                 </div>
             </div>

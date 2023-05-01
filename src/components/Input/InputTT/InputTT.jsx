@@ -59,7 +59,7 @@ export default function InputTT() {
     try {
       const response = await axios.delete(`${BASE_URL}/timetable/delete/${id}`);
       setData((prevSemesters) => prevSemesters.filter((semester) => semester._id !== id)); //update the data by removing deleted data
-      console.log(response.data);
+      toast.success("Timetable Deleted Successfully")
     } catch (error) {
       console.error(error);
     }
