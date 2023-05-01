@@ -64,11 +64,8 @@ function register() {
         }
     }
 
-
-
-
     return (
-        <>
+        <body style={{ backgroundColor: 'hsl(218, 41%, 15%)' }}>
             <section className="background-radial-gradient overflow-hidden">
 
                 <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5 register">
@@ -147,7 +144,7 @@ function register() {
                 </div>
             </section>
             <ToastContainer />
-        </>
+        </body>
     )
 }
 

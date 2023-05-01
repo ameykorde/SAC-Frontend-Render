@@ -63,7 +63,7 @@ function UpdateDelete() {
         </thead>
         <tbody>
           {calendars.map((calendar) => (
-            <tr key={calendar._id}>
+            <tr key={calendar._id} style={{fontSize:"1.2rem"}}>
               <td>{calendar.name}</td>
               <td>
                 <img src={`${BASE_URL}/uploads/${calendar.file}`} alt="timetable" width="50" height="50" />

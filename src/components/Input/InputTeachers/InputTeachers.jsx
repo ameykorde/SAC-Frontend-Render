@@ -43,7 +43,7 @@ function InputTeachers() {
       <div className="container">
         <h1>Teachers Time Table</h1>
       </div>
-      <form className="input" onSubmit={handleSubmit} encType="multipart/form-data">
+      <form className="input-card container" onSubmit={handleSubmit} encType="multipart/form-data">
         <div className="input-group mb-3 me-3 ">
           <span className="input-group-text">Name</span>
           <input

@@ -58,7 +58,7 @@ function Todo() {
   // Function to delete item when clicked on delete button
   const deleteItem = async (id) => {
     try {
-      await axios.delete(`${BASE_URL}/todo/delete/${id}`, { userId })
+      await axios.delete(`${BASE_URL}/todo/delete/${id}`, { data: { userId } })
       const newListItems = listItems.filter(item => item._id !== id);
       setListItems(newListItems);
       toast.success('Deleted Successfully')
@@ -113,7 +113,7 @@ function Todo() {
 
   return (
     <>
-      <button className='btn logout-icon py-3 px-3' onClick={logout} title="Logout">
+      <button className='btn logout-icon' onClick={logout} title="Logout">
         <i className="fa-solid fa-power-off fa-2xl "></i>
       </button>
       <Navbar handleSearch={handleSearch} />

@@ -151,7 +151,7 @@ function UpdateDelete() {
           {/* Mapping through the 'teachers' array and rendering a table row for each teacher */}
           {teachers.map((teacher) => (
             // Setting a unique 'key' prop for each row, using the teacher's ID
-            <tr key={teacher._id}>
+            <tr key={teacher._id} style={{fontSize:"1.2rem"}}>
               {/* Conditionally rendering either the teacher's data or an edit form */}
               {editId === teacher._id ? (
                 // If the 'editId' state matches the current teacher's ID, render an edit form

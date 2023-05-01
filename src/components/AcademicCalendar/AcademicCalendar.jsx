@@ -51,7 +51,7 @@ function AcademicCalendar() {
             <button
               key={_id}
               type="button"
-              className="btn btn-lg btn-outline-primary calendar-button mx-5"
+              className="btn btn-lg btn-outline-primary calendar-button mx-5 fs-4 fw-medium" 
               onClick={() => handleCalendarSelect(name)}
             >
               {name}

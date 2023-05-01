@@ -36,7 +36,7 @@ const InputAbsentTeacher = () => {
             {isAdmin === 'true' && <InputNavbar />}
             <div className='container'>
                 <h1>Absent Teacher</h1>
-                <form className="input text-center" onSubmit={handleSubmit}>
+                <form className="input-card text-center" onSubmit={handleSubmit}>
                     <div className="input-group mb-3 me-3">
                         <span className="input-group-text">Name</span>
                         <input

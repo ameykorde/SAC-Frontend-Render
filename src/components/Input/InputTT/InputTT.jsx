@@ -70,7 +70,7 @@ export default function InputTT() {
       <InputNavbar />
       <div className='container'>
         <h1>TIME TABLE</h1>
-        <form className='input' onSubmit={handleSubmit} encType='multipart/form-data'>
+        <form className='input-card' onSubmit={handleSubmit} encType='multipart/form-data'>
           <div className='input-group mb-3 me-3'>
             <span className='input-group-text'>Semester</span>
             <input type='text' name='semester' onChange={(e) => setSemester(e.target.value)} className='form-control' />
@@ -86,7 +86,7 @@ export default function InputTT() {
         <h2 className="text-center my-3">Semesters:</h2>
         <ul className="list-group mx-auto w-75">
           {data.map((semester) => (
-            <li key={semester._id} className="list-group-item d-flex justify-content-between align-items-center">
+            <li key={semester._id} className="list-group-item d-flex justify-content-between align-items-center" style={{fontSize:"1.2rem"}}>
               {semester.semester}
               <button onClick={() => handleDelete(semester._id)} type='button' className='btn btn-danger'>
                 Delete

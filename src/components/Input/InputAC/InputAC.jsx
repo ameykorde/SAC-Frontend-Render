@@ -40,7 +40,7 @@ export default function InputAC() {
         <h1>ACADEMIC CALENDAR</h1>
       </div>
       {/* Form to add academic calendar */}
-      <form className="input my-5" onSubmit={handleSubmit} encType="multipart/form-data">
+      <form className="input-card my-5 container" onSubmit={handleSubmit} encType="multipart/form-data">
         <div className="input-group mb-3 me-3">
           <span className="input-group-text">Name</span>
           <input
@@ -53,7 +53,7 @@ export default function InputAC() {
         </div>
         <div className="input-group mb-3 tt-upload">
           <input
-            type="file"
+            type="file" 
             name="file"
             onChange={(e) => setFile(e.target.files[0])}
             className="form-control"

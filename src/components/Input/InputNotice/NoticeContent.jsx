@@ -112,7 +112,7 @@ function NoticeContent(props) {
                                 style={{ width: "70%" }}
                                 value={originalData.title}
                                 onChange={handleInputChange}
-                                placeholder='Enter Heading'
+                                placeholder='Enter Title'
                             />
                         </div>
 

@@ -107,7 +107,7 @@ function Input() {
 
             <div className="input-group mb-3 my-3">
               <span className="input-group-text col-xs-4">
-                <h5>Heading</h5>
+                <h5>Title</h5>
               </span>
               <input
                 name="title"

@@ -64,7 +64,7 @@ export default function InputAdmin() {
                     <tbody>
                         {/* Map over all users in the database and display their information */}
                         {users.map((user) => (
-                            <tr key={user._id}>
+                            <tr key={user._id} style={{fontSize:"1.2rem"}}>
                                 <td>{user.name}</td>
                                 {/* Checkbox to toggle admin status of user */}
                                 <td>

@@ -46,7 +46,7 @@ const DeleteTeacher = () => {
           </thead>
           <tbody>
             {absentTeachers.map((teacher) => (
-              <tr key={teacher._id}>
+              <tr key={teacher._id} style={{fontSize:"1.2rem"}}>
                 <td>{teacher.name}</td>
                 <td>{moment(teacher.fromDate).format('dddd, Do MMMM')}</td>
                 <td>{moment(teacher.toDate).format('dddd, Do MMMM')}</td>
