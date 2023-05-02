@@ -22,14 +22,14 @@ function InputTeachers() {
     try {
       const response = await axios.post(`${BASE_URL}/teacher/post`, formData);
       console.log(response.data);
-      toast.success('Teacher added successfully!');
+      toast.success('Data added successfully!');
       // Reset form and file input after successful submission
       setName('');
       setEmail('');
       setFile(null);
     } catch (error) {
       console.error(error);
-      toast.error('Failed to add teacher!');
+      toast.error('Failed to add Data!');
     }
   };
 
