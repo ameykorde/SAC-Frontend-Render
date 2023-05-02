@@ -4,8 +4,10 @@ import moment from 'moment';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from '../../../services/url'
+import 'moment-timezone';
 
 function NoticeAlert() {
+    moment.tz.setDefault('Asia/Kolkata');  //setting default timezone to Indian Timezone
     const [notices, setNotices] = useState([]);
 
     // Fetch notice data from server on component mount
