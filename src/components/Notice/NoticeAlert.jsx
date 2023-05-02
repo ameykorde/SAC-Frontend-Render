@@ -24,17 +24,11 @@ function NoticeAlert() {
                 console.error(error);
             }
         };
-
+        
         fetchData();
     }, []);
-
-    // Convert time to a display format
-    let displayTime = moment(notices.time, 'HH:mm').format('hh:mm A');
-    // If the time is invalid, set displayTime to an empty string
-    if (displayTime === 'Invalid date') {
-        displayTime = '';
-    }
-
+    
+    
     // Fetch notice data from server on component mount if user logged in
     if (localStorage.getItem("user")) {
         useEffect(() => {
@@ -50,14 +44,20 @@ function NoticeAlert() {
                     moment().format('HH:mm') === '14:00' ||
                     moment().format('HH:mm') === '15:00' ||
                     moment().format('HH:mm') === '16:00' ||
-                    moment().format('HH:mm') === '17:07' ||
+                    moment().format('HH:mm') === '17:00' ||
                     moment().format('HH:mm') === '18:00' ||
                     moment().format('HH:mm') === '19:00' ||
                     moment().format('HH:mm') === '20:00' ||
                     moment().format('HH:mm') === '21:00'
-                ) {
-                    if (notices.length > 0) {
+                    ) {
+                        if (notices.length > 0) {
                         notices.forEach((notice) => {
+                        // Convert time to a display format
+                        let displayTime = moment(notice.time, 'HH:mm').format('hh:mm A');
+                        // If the time is invalid, set displayTime to an empty string
+                        if (displayTime === 'Invalid date') {
+                            displayTime = '';
+                        }
                             toast(` ${notice.title} is scheduled at ${displayTime}`, { position: 'top-right', autoClose: 15000 });
                         });
                     }
