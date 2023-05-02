@@ -50,7 +50,7 @@ function NoticeAlert() {
                     moment().format('HH:mm') === '14:00' ||
                     moment().format('HH:mm') === '15:00' ||
                     moment().format('HH:mm') === '16:00' ||
-                    moment().format('HH:mm') === '17:00' ||
+                    moment().format('HH:mm') === '17:07' ||
                     moment().format('HH:mm') === '18:00' ||
                     moment().format('HH:mm') === '19:00' ||
                     moment().format('HH:mm') === '20:00' ||
