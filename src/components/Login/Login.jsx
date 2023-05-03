@@ -69,7 +69,7 @@ export default function Login() {
               <div id="radius-shape-1" className="position-absolute rounded-circle shadow-5-strong"></div>
               <div id="radius-shape-2" className="position-absolute shadow-5-strong"></div>
               <div className="card bg-glass login-card">
-                <h1 className="fw-bold mb-5 text-center mt-4" style={{ color: "#00008b" }}>Login </h1>
+              <h1 className="fw-bold mb-3 text-center mt-4" style={{ color: "hsl(218, 41%, 15%)" }}>Login </h1>
                 <div className="card-body px-4 px-md-5">
                   <form>
                     <div className="form-floating mb-4">
