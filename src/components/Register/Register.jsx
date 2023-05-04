@@ -25,8 +25,8 @@ function register() {
     const handlePassword = (event) => {
         const password = event.target.value;
         setUser({ ...user, password });
-        if (password.length <= 6) {
-            setErrorMessage('Password must be 6 characters long.');
+        if (password.length < 6) {
+            setErrorMessage('Password must be minimum 6 characters long.');
         } else {
             setErrorMessage('');
         }
@@ -38,8 +38,11 @@ function register() {
         const { name, username, id, password, cpassword } = user;
 
         //Checking if user has entered the data or not
-        if(name === "" || username === "" || password === "" || cpassword === ""){
-            toast.error('All fields are mandatory ', {position: "top-center"})
+        if (name === "" || username === "" || password === "" || cpassword === "") {
+            toast.error('All fields are mandatory ', { position: "top-center" })
+        }
+        else if (password.length < 6) {
+            toast.error('Password must be minimum 6 characters long.', { position: "top-center" })
         }
         // Validating input data and posting to server
         else if (name && username && id && (password === cpassword)) {

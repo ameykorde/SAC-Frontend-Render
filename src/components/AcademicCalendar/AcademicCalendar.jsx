@@ -7,9 +7,6 @@ import {BASE_URL} from '../../../services/url'
 // import components
 import Navbar from '../Navbar/Nav';
 
-// import CSS
-import './AcademicCalendar.css';
-
 function AcademicCalendar() {
   // set initial states
   const [calendars, setCalendars] = useState([]);
@@ -64,7 +61,7 @@ function AcademicCalendar() {
             .filter(({ name }) => name === selectedCalendar)
             .map(({ _id, file }) => (
               <div key={_id} className="grid__item">
-                <img className="img-fluid" src={`${BASE_URL}/uploads/${file}`} alt="grid_image" />
+                <img className="img-fluid" src={`${BASE_URL}/uploads/${file}`} alt="grid_image" style={{display: 'block', margin: '0 auto'}} />
               </div>
             ))}
         </div>

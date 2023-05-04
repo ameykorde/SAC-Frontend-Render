@@ -34,7 +34,7 @@ const DeleteTeacher = () => {
   // render absent teachers table
   return (
     <>
-      <div className='container '>
+      <div className='container table-responsive'>
         <table className='table table-striped'>
           <thead>
             <tr>

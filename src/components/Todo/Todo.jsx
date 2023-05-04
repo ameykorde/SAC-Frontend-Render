@@ -139,6 +139,7 @@ function Todo() {
                 onChange={(e) => {
                   setDescription(e.target.value);
                 }}
+                rows="3"
                 value={description}
               />
             </div>

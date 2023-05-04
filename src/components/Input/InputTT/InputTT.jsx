@@ -57,7 +57,7 @@ export default function InputTT() {
   // Function to handle deletion of a semester
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`${BASE_URL}/timetable/delete/${id}`);
+      await axios.delete(`${BASE_URL}/timetable/delete/${id}`);
       setData((prevSemesters) => prevSemesters.filter((semester) => semester._id !== id)); //update the data by removing deleted data
       toast.success("Timetable Deleted Successfully")
     } catch (error) {
@@ -82,7 +82,7 @@ export default function InputTT() {
             Upload
           </button>
         </form>
-
+        <p style={{textAlign: "center",marginTop:"1%",opacity:"0.9"}}>*Select multiple images to display multiple sections</p>
         <h2 className="text-center my-3">Semesters:</h2>
         <ul className="list-group mx-auto w-75">
           {data.map((semester) => (

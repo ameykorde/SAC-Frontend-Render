@@ -84,7 +84,7 @@ function Input() {
       <div className='container'>
         <h1> Enter Notice</h1>
         <div className="row justify-content-center">
-          <div className="input-notice-card">
+          <form className="input-notice-card">
             <div className="input-notice-date ">
               <h5 className="ms-3 mt-2 me-3">Date:</h5>
               <input
@@ -127,7 +127,7 @@ function Input() {
                 className="form-control"
                 value={notice.content}
                 onChange={handleInput}
-                rows="3"
+                rows="4"
               ></textarea>
             </div>
 
@@ -138,7 +138,7 @@ function Input() {
             >
               Add Notice
             </button>
-          </div>
+          </form>
 
           {
             data.map(item => {
